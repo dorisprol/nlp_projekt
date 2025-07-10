@@ -1,0 +1,101 @@
+
+
+@media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000324}}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+  @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000330}}
+  html, body {
+    height: 100%; }
+
+    @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000336}}
+    body {
+      background-color: #568270;
+      color: #4E5250;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+
+      @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000347}}
+      .container {
+        width: 100%;
+        max-width: 600px; }
+
+        @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000352}}
+        h1 {
+          color: #4E5250;
+          margin-bottom: 1em;
+          text-align: center; }
+
+          @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000358}}
+          form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #E1E3E2;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 2em; }
+
+            @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000371}}
+            label {
+              margin-bottom: 0.5em;
+              font-weight: bold; }
+
+              @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000376}}
+              input {
+                padding: 0.75em;
+                font-size: 1em;
+                width: 100%;
+                margin-bottom: 1em;
+                border: 1px solid #8AA997;
+                border-radius: 4px; }
+
+                @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000385}}
+                button {
+                  background-color: #8AA997;
+                  color: #E1E3E2;
+                  border: none;
+                  padding: 0.75em 1.5em;
+                  font-size: 1em;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease; }
+
+                  @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\0000396}}
+                  button:hover {
+                    background-color: #6d937d; }
+
+                    @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\00003100}}
+                    .error {
+                      color: #E1E3E2;
+                      margin-top: 1em; }
+
+                      @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\00003105}}
+                      .result {
+                        background: #E1E3E2;
+                        padding: 1.5em;
+                        border-radius: 10px;
+                        max-width: 600px;
+                        width: 100%; }
+
+                        @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\00003113}}
+                        .result h3 {
+                          color: #4E5250;
+                          margin-top: 1em; }
+
+                          @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\00003118}}
+                          .result ol {
+                            padding-left: 1.2em; }
+
+                            @media -sass-debug-info{filename{font-family:file\:\/\/static\/scss\/style\.scss}line{font-family:\00003122}}
+                            .hidden {
+                              display: none !important; }

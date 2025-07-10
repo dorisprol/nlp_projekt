@@ -1,0 +1,124 @@
+// ----------------------------------------
+// 1. Import your custom palette
+// ----------------------------------------
+@import 'palette';
+
+// ----------------------------------------
+// 2. Theme variables
+// ----------------------------------------
+$font-stack: 'Helvetica Neue', Arial, sans-serif;
+
+// Override these to point at your palette variables
+$primary-color:    $davys-gray;       // dark text color
+$background-color: $platinum;         // off-white background
+$accent-color:     $cambridge-blue;   // buttons, focus states
+$error-color:      $platinum;  // error messages
+
+$border-radius:      4px;
+$transition-duration: 0.3s;
+$max-width:          600px;
+
+// ----------------------------------------
+// 3. Reset & global
+// ----------------------------------------
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+
+
+body {
+  background-color: $viridian;
+  color: $primary-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+}
+
+h1 {
+  color: $primary-color;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-color;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+label {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.75em;
+  font-size: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+}
+
+button {
+  background-color: $accent-color;
+  color: $background-color;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken($accent-color, 10%);
+}
+
+.error {
+  color: $error-color;
+  margin-top: 1em;
+}
+
+.result {
+  background: $background-color;
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.result h3 {
+  color: $primary-color;
+  margin-top: 1em;
+}
+
+.result ol {
+  padding-left: 1.2em;
+}
+
+.hidden {
+  display: none !important;
+}

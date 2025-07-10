@@ -1,0 +1,25 @@
+/* Custom SCSS Palette Variables */
+
+$viridian: #568270;
+$cambridge-blue: #8AA997;
+$platinum: #E1E3E2;
+$battleship-gray: #8F8F8F;
+$davys-gray: #4E5250;
+
+/* Optional HSL Equivalents */
+$viridian-hsl: hsla(155, 20%, 42%, 1);
+$cambridge-blue-hsl: hsla(145, 15%, 60%, 1);
+$platinum-hsl: hsla(150, 3%, 89%, 1);
+$battleship-gray-hsl: hsla(0, 0%, 56%, 1);
+$davys-gray-hsl: hsla(150, 3%, 31%, 1);
+
+/* Gradient Variables */
+$gradient-top: linear-gradient(0deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-right: linear-gradient(90deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-bottom: linear-gradient(180deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-left: linear-gradient(270deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-top-right: linear-gradient(45deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-bottom-right: linear-gradient(135deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-top-left: linear-gradient(225deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-bottom-left: linear-gradient(315deg, $viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
+$gradient-radial: radial-gradient($viridian, $cambridge-blue, $platinum, $battleship-gray, $davys-gray);
