@@ -7,13 +7,11 @@ from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 import pandas as pd
 import re
 
-# --- Configuration ---
 MODEL_PATH = 'model.pt'
 DATA_CSV = 'unaccented_data.csv'
 MAX_WORD_LEN = 16
 ALLOWED_RE = re.compile(r'^[A-Za-zčćđšžČĆĐŠŽ-]{1,16}$')
 
-# --- Load vocabulary and metadata ---
 df = pd.read_csv(DATA_CSV)
 words = df['Word'].astype(str).tolist()
 chars = sorted({c for w in words for c in w})
@@ -21,7 +19,6 @@ char2idx = {c: i+1 for i, c in enumerate(chars)}
 vocab_size = len(char2idx) + 1
 max_len = max(len(w) for w in words)
 
-# --- Model definition (same as training) ---
 class AccentModel(nn.Module):
     def __init__(self, vocab_size, embed_dim, hidden_dim, output_dim, dropout_p=0.3):
         super().__init__()
@@ -38,29 +35,20 @@ class AccentModel(nn.Module):
         out = self.dropout(h_final)
         return self.fc(out)
 
-# --- Instantiate and load model ---
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = AccentModel(vocab_size, embed_dim=64, hidden_dim=64,
                     output_dim=max_len+1, dropout_p=0.3).to(device)
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
 model.eval()
 
-
-# --- Flask app and assets setup ---
 app = Flask(__name__)
 
-# 1) Initialize Flask-Assets
 assets = Environment(app)
 
-# 2) Tell it where to look (optional if you use default static folder)
 assets.load_path = [
     'static/scss'
 ]
 
-# 3) Define a bundle:
-#    - input: palette.scss then style.scss (so style.scss can @import variables from palette)
-#    - filters: use pyscss to compile SCSS→CSS
-#    - output: write to static/css/main.css
 scss_bundle = Bundle(
     'palette.scss',
     'style.scss',
@@ -68,10 +56,8 @@ scss_bundle = Bundle(
     output='css/main.css'
 )
 
-# 4) Register it under a name you’ll reference in templates
 assets.register('main_css', scss_bundle)
 
-# 5) (Optional) auto-build in dev
 app.config['ASSETS_DEBUG'] = True   # disable caching so you see CSS changes immediately
 assets.auto_build = True
 
@@ -116,7 +102,6 @@ HTML = '''
 </html>
 '''
 
-# --- Helper: predict top-2 for a segment ---
 def predict_top2(segment: str):
     seq = torch.tensor([char2idx.get(c, 0) for c in segment], dtype=torch.long)
     length = torch.tensor([len(seq)], dtype=torch.long)
@@ -134,7 +119,6 @@ def predict_top2(segment: str):
             results.append((pos, char, round(p*100, 2)))
     return results
 
-# --- Routes ---
 @app.route('/', methods=['GET', 'POST'])
 def index():
     error = None
